@@ -1,0 +1,115 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-back-button defaultHref="/tabs/trabajo" text="">
+        </ion-back-button>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarTicket();">
+        <ion-icon name="close-circle-outline" size="large"></ion-icon>
+      </ion-button>
+      <ion-button (click)="cerrarSesion();">
+        <ion-icon name="log-out-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      Acta de Servicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-text class="ion-text-center texto-superior" color="primary">
+  <h4>ACTIVIDADES</h4>
+</ion-text>
+
+<ion-content>
+
+  <ion-card class="ion-card-trabajo">
+    <ion-card-header>
+      <ion-card-subtitle style="font-size:12px">Mediciones de Voltaje</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label style="font-size:14px">Volts F-N</ion-label>
+          <ion-input slot="end" style="font-size:14px" [(ngModel)]="detalleTrabajo.voltsFN" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="font-size:14px">Volts N-T</ion-label>
+          <ion-input slot="end" style="font-size:14px" [(ngModel)]="detalleTrabajo.voltsNT" required></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="ion-card-trabajo">
+    <ion-card-header>
+      <ion-card-subtitle style="font-size:12px">Actividades</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label style="font-size:14px">Habilitación P/E</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="detalleTrabajo.habilitacionPE"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="font-size:14px">Traslado P/E</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="detalleTrabajo.trasladoPE"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="font-size:14px">Instalación P/E</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="detalleTrabajo.instalacionPE"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="font-size:14px">Reparación P/E</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="detalleTrabajo.reparacionPE"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="font-size:14px">Retiro P/E</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="detalleTrabajo.retiroPE"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="font-size:14px">Certificación</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="detalleTrabajo.certificacionPE"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card class="ion-card-trabajo">
+    <ion-card-header class="ion-padding"> 
+      <ion-card-subtitle style="font-size:12px">Observaciones</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+          <ion-textarea style="font-size:14px; padding: 0 10px;" name="observaciones" type="text" rows="6" [(ngModel)]="detalleTrabajo.observaciones"
+          placeholder="Notas acerca del servicio"></ion-textarea>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-button (click)="guardarActividades()" color="primary" shape="round">
+        Guardar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <p></p>
+
+</ion-content>
